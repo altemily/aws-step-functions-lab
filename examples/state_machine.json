@@ -1,0 +1,16 @@
+{
+  "Comment": "Exemplo de Step Function chamando duas Lambdas",
+  "StartAt": "LambdaA",
+  "States": {
+    "LambdaA": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT:function:LambdaA",
+      "Next": "LambdaB"
+    },
+    "LambdaB": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT:function:LambdaB",
+      "End": true
+    }
+  }
+}
